@@ -14,7 +14,8 @@
     <h1>
     <%=link_to "Media Ranker", root_path%>
     </h1>
-    <%=link_to "All Works", works_path%>
+    <span><%=link_to "All Works", works_path%></span> | 
+    <span><%=link_to "Add A New Work", new_work_path%></span>
     </nav>
     <%= yield %>
   </body>

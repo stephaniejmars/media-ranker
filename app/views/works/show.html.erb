@@ -1,0 +1,22 @@
+<section>
+  <p>This is the SHOW page for:</p><%= @work.title %> </p>
+  <p>Created by: <%= @work.creator %> </p>
+  <p>Published: <%= @work.publication_year %> </p>
+  <p><%= @work.description %></p>
+</section>
+<section>
+  <button>
+    <%= link_to "Back to media ranks", root_path%>
+  </button>
+  <button>
+    <%= link_to "Edit", edit_work_path%>
+  </button>
+  <button>
+    <%= link_to "Upvote (Not Built)"%>
+  </button>
+  <button>
+    <%= link_to "Delete", work_path(@work.id),
+      method: :delete,
+      data: {confirm: "Are you sure you want to delete this work?"}%>
+  </button>
+</section>

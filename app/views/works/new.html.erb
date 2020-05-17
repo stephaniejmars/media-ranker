@@ -1,0 +1,30 @@
+<%= form_with model: @work, class: 'works' do |f| %>
+  <p>Please provide the following information to add a new Work</p>
+  <div>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :creator %>
+    <%= f.text_field :creator %>
+  </div>
+  <div>
+    <%= f.label :publication_year %>
+    <%= f.text_field :publication_year %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <%= f.submit action_name %>
+<% end %>
+
+          <%# category: "album",
+          title: "Chasing Squirrels",
+          creator: "Junito the Burrito", 
+          publication_year: 2019,
+          description: " %>
