@@ -14,6 +14,13 @@
     <h1>
     <%=link_to "Media Ranker", root_path%>
     </h1>
+    <section class="flash">
+      <%flash.each do |name, message|%>
+        <div class="<%name%>">
+          <%=message%>
+        </div>
+      <%end%>
+    </section>
     <span><%=link_to "All Works", works_path%></span> | 
     <span><%=link_to "Add A New Work", new_work_path%></span>
     </nav>

@@ -1,3 +1,13 @@
+<% if @work.errors.any? %>
+  <ul class="errors">
+    <% @work.errors.each do |column, message| %>
+      <li>
+        <strong><%= column.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model: @work, class: 'works' do |f| %>
   <p>Please provide the following information to add a new Work</p>
   <div>
@@ -22,9 +32,3 @@
   </div>
   <%= f.submit action_name %>
 <% end %>
-
-          <%# category: "album",
-          title: "Chasing Squirrels",
-          creator: "Junito the Burrito", 
-          publication_year: 2019,
-          description: " %>
