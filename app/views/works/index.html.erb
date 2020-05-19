@@ -1,20 +1,90 @@
 <div class='works'>
-  <h2>List of Works </h2>
+  <h2>List of Works</h2>
 
 
-  <section>
-    <% if @works.length > 0 %>
-        <ul>
-          <% @works.each do |work| %>
-            <li>
-              <strong>
-              <%=link_to work.title, work_path(work.id) %>
-              </strong> 
-              <%=work.creator%>
-              <%=work.publication_year%>
-            </li>
-          <% end %>
-        </ul>
+  <section class="media-table">
+    <h4>Albums</h4>
+    <% if @album_collection.length > 0 %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="tbl-votes">Votes</th>
+              <th class="tbl-title">Title</th>
+              <th class="tbl-creator">Creator</th>
+              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-upvote">Upvote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @album_collection.each do |work| %>
+              <tr>
+                <td>Votes</td>
+                <td><%=link_to work.title, work_path(work.id)%></td>
+                <td><%=work.creator%></td>
+                <td><%=work.publication_year%></td>
+                <td><%=button_to "Upvote(To Be Built)", root_path, class: "btn btn-primary"%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% else %>
+      <h3>No Works Found!</h3>
+    <% end %>
+  </section>
+  <section class="media-table">
+    <h4>Books</h4>
+    <% if @book_collection.length > 0 %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="tbl-votes">Votes</th>
+              <th class="tbl-title">Title</th>
+              <th class="tbl-creator">Creator</th>
+              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-upvote">Upvote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @book_collection.each do |work| %>
+              <tr>
+                <td>Votes</td>
+                <td><%=link_to work.title, work_path(work.id)%></td>
+                <td><%=work.creator%></td>
+                <td><%=work.publication_year%></td>
+                <td><%=button_to "Upvote(To Be Built)", root_path, class: "btn btn-primary"%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <% else %>
+      <h3>No Works Found!</h3>
+    <% end %>
+  </section>
+  <section class="media-table">
+    <h4>Movies</h4>
+    <% if @movie_collection.length > 0 %>
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="tbl-votes">Votes</th>
+              <th class="tbl-title">Title</th>
+              <th class="tbl-creator">Creator</th>
+              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-upvote">Upvote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @movie_collection.each do |work| %>
+              <tr>
+                <td>Votes</td>
+                <td><%=link_to work.title, work_path(work.id)%></td>
+                <td><%=work.creator%></td>
+                <td><%=work.publication_year%></td>
+                <td><%=button_to "Upvote(To Be Built)", root_path, class: "btn btn-primary"%></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
     <% else %>
       <h3>No Works Found!</h3>
     <% end %>
