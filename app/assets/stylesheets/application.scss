@@ -17,8 +17,16 @@
 
 @import "**/*";
 
-body, h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5 {
   font-family: "Gudea", sans-serif;
+  font-weight: bold
+}
+body {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
 }
 
 header {
@@ -28,13 +36,13 @@ header {
 
 h1 {
   text-align: center;
-  font-weight: bold;
+  // font-weight: bold;
   margin: 25px auto 40px auto;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: bold;
+  // font-weight: bold;
   color: #26A69A;
   // font-family: "Gudea", sans-serif;
 }
@@ -151,4 +159,31 @@ a:active {
   display: block;
   padding: 0.5rem 1rem;
   color: #00796B;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border-collapse: collapse;
+}
+
+.tbl-votes {
+  width: 80px;
+}
+
+.tbl-title {
+
+}
+
+.tbl-creator {
+
+}
+
+.tbl-year {
+  width: 100px;
+}
+
+.tbl-upvote {
+  width: 100px;
 }

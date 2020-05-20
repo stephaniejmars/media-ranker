@@ -11,7 +11,7 @@
               <th class="tbl-votes">Votes</th>
               <th class="tbl-title">Title</th>
               <th class="tbl-creator">Creator</th>
-              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-year">Published</th>
               <th class="tbl-upvote">Upvote</th>
             </tr>
           </thead>
@@ -40,7 +40,7 @@
               <th class="tbl-votes">Votes</th>
               <th class="tbl-title">Title</th>
               <th class="tbl-creator">Creator</th>
-              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-year">Published</th>
               <th class="tbl-upvote">Upvote</th>
             </tr>
           </thead>
@@ -69,7 +69,7 @@
               <th class="tbl-votes">Votes</th>
               <th class="tbl-title">Title</th>
               <th class="tbl-creator">Creator</th>
-              <th class="tbl-year">Publication Year</th>
+              <th class="tbl-year">Published</th>
               <th class="tbl-upvote">Upvote</th>
             </tr>
           </thead>
@@ -90,6 +90,7 @@
     <% end %>
   </section>
   <footer>
-    <%=link_to "Add A New Work", new_work_path%>
+    <span><%=button_to "View top media", root_path, class: "btn btn-secondary"%></span>
+    <span><%=button_to "Add a new work", new_work_path, class: "btn btn-primary" %></span>
   </footer>
 </div>
