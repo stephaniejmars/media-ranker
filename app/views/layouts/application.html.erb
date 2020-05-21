@@ -31,7 +31,11 @@
         <li class="nav-item app-header__nav_item"><%=link_to "View All Users"%></li>
       </ul>
       <ul class="nav app-header__site-nav-container">
-        <li class="nav-item app-header__nav_item"><button class="btn btn-primary">Log In</button> </li>
+        <% if session[:user_id]%>
+          <li class="nav-item app-header__nav_item"><%=link_to "Logout", logout_path, method: :post, class: "btn btn-primary"%></li>
+        <%else%>
+          </li class="nav-item app-header__nav_item"><%=link_to "Log In", login_path, class: "btn btn-primary"%></li>
+        <%end%>
       </ul>
     </nav>
 
