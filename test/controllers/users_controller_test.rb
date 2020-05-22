@@ -16,10 +16,9 @@ describe UsersController do
 
       must_respond_with :redirect 
 
-      user = User.find_by(user_name: user.user_name)
       expect(user).wont_be_nil
       expect(session[:user_id]).must_equal user.id
-      expect(user.user_name).must_equal user_hash[:user][:user_name]
+      expect(user.user_name).must_equal "Junito Burrito"
     end 
 
     it "can login an existing user" do 
@@ -28,7 +27,7 @@ describe UsersController do
         login(user.user_name)
       }.wont_change "User.count"
 
-      expect (session[:user_id]).must_equal user.id
+      expect(session[:user_id]).must_equal user.id
     end 
   end 
 
