@@ -33,16 +33,27 @@ describe UsersController do
 
   describe "logout" do 
     it "can loggout a logged in user" do 
-      #arrange 
+
       login()
       expect(session[:user_id]).wont_be_nil 
-      #act
+
       post logout_path 
 
-      #assert 
       expect(session[:user_id]).must_be_nil 
     end 
-
-
   end 
+
+  describe "current user" do 
+    it "can return a user page if user is logged in" do 
+      login()
+      get current_user_path
+      must_respond_with :success
+    end
+
+    it "redirects back if the user is not logged in" do 
+      get current_user_path
+      must_respond_with :redirect
+      expect(flash[:error]).must_equal "You must be logged in to view this page"
+    end 
+  end
 end
