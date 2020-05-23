@@ -1,5 +1,5 @@
 <section>
-  <p>This is the SHOW page for:</p><%= @work.title %> </p>
+  <h2><%= @work.title %> </h2>
   <p>Created by: <%= @work.creator %> </p>
   <p>Published: <%= @work.publication_year %> </p>
   <p><%= @work.description %></p>
@@ -17,7 +17,11 @@
     </span>
 </section>
 <section class="media-table">
-  <h2><%=@work.votes.count%> Votes for this <%=@work.category.capitalize%></h2>
+  <%if@work.votes.count == 1 %>
+    <h2 style="color:black;"><%=@work.votes.count%> Vote for this <%=@work.category.capitalize%></h2>
+  <%else%>
+    <h2><%=@work.votes.count%> Votes for this <%=@work.category.capitalize%></h2>
+  <%end%>
   <table class="table">
     <thead>
       <tr>
@@ -28,8 +32,8 @@
     <tbody>
       <%@work.votes.each do |vote|%>
         <tr>
-          <td><%=vote.user.user_name%></td>
-          <td><%=vote.created_at%></td>
+          <td><%=link_to vote.user.user_name, user_path(vote.user)%></td>
+          <td><%=vote.created_at.strftime("%B %d, %Y")%></td>
         </tr>
       <%end%>
     </tbody>
