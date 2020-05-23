@@ -5,14 +5,33 @@
   <p><%= @work.description %></p>
 </section>
 <section>
-    <span><%= button_to "Back to media ranks", root_path, :class => "btn btn-primary"%></span>
-    <span><%= button_to "Edit", edit_work_path, :class => "btn btn-primary"%></span>
-    <span><%= button_to "Upvote (Not Built)", root_path, :class => "btn btn-primary"%></span>
+    <span><%= button_to "Back to media ranks", root_path, :class => "btn btn-primary", form: {style: 'display:inline-block;'}%></span>
+    <span><%= button_to "Edit", edit_work_path, :class => "btn btn-primary", form: {style: 'display:inline-block;'}%></span>
+    <span><%= button_to "Upvote", votes_path(work_id: @work.id), method: :post, :class => "btn btn-primary", form: {style: 'display:inline-block;'}%></span>
     <span>
     <%= button_to "Delete", work_path(@work.id), 
     method: :delete, 
     data: {confirm: "Are you sure you want to delete this work?"},
-    :class => "btn btn-danger" %>
+    :class => "btn btn-danger", 
+    form: {style: 'display:inline-block;'} %>
     </span>
-  
+</section>
+<section class="media-table">
+  <h2><%=@work.votes.count%> Votes for this <%=@work.category.capitalize%></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%@work.votes.each do |vote|%>
+        <tr>
+          <td><%=vote.user.user_name%></td>
+          <td><%=vote.created_at%></td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
 </section>
