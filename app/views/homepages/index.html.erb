@@ -9,7 +9,7 @@
             <h4><%=link_to movie.title, work_path(movie.id)%>
             <small class="top-ten__creator"> by: <%=movie.creator%></small>
             </h4> 
-            <p>votes</p>
+            <p><%=movie.votes.count%> votes</p>
             </li>
           <%end%>
         </ul>
@@ -22,7 +22,7 @@
             <h4><%=link_to book.title, work_path(book.id)%>
             <small class="top-ten__creator">by: <%=book.creator%></small>
             </h4> 
-            <p>votes</p>
+            <p><%=book.votes.count%> votes</p>
             </li>
           <%end%>
         </ul>
@@ -35,7 +35,7 @@
           <h4><%=link_to album.title, work_path(album.id)%>
           <small class="top-ten__creator">by: <%=album.creator%></small>
           </h4> 
-          <p>votes</p>
+          <p><%=album.votes.count%> votes</p>
         <%end%>
         </ul>
     </section>

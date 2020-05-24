@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: 'homepages#index'
 
   resources :works
-  # resources :users
+  resources :users, only: [:show, :index]
+  resources :votes, only: [:create]
   
   get "/login", to: "users#login_form", as: "login"
   post "/login", to: "users#login"
