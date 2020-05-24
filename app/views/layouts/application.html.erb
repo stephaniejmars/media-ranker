@@ -22,7 +22,7 @@
         <li class="nav-item app-header__nav_item"><%=link_to "View Top Media", root_path%></li>
         <li class="nav-item app-header__nav_item"><%=link_to "All Works", works_path%></li>
         <li class="nav-item app-header__nav_item"><%=link_to "Add A New Work", new_work_path%></li>
-        <li class="nav-item app-header__nav_item"><%=link_to "View All Users"%></li>
+        <li class="nav-item app-header__nav_item"><%=link_to "View All Users", users_path%></li>
       </ul>
       <ul class="nav app-header__user-nav-container">
         <% if session[:user_id]%>
