@@ -1,3 +1,5 @@
+<h2>Log In</h2>
+
 <%= form_with model: @user, url: login_path do |f| %>
   <div class="form-group">
     <%=f.label :user_name, "Username"%>
@@ -5,3 +7,8 @@
   </div>
   <%=f.submit "Log In", class: "btn btn-primary"%>
 <%end%>
+<br>
+<h4 style="color:black;">A note about logging in </h4>
+<p>There is no password field. In fact, there is no indication whatsoever that you are who you say you are. There's nothing special about users - username is just another piece of data that the user entered and we have to keep track of.
+
+We'll learn more about security and authentication in the next couple weeks. For now, don't worry about it beyond what you can see here.</p>

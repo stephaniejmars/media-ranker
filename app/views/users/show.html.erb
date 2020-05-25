@@ -27,3 +27,7 @@
     </tbody>
   </table>
 </section>
+<footer>
+  <span><%= button_to "See all users", users_path, method: :get, class: "btn btn-secondary", form: {style: 'display:inline-block;'}%></span>
+  <span><%= button_to "Add a new work", new_work_path, method: :get, class: "btn btn-primary", form: {style: 'display:inline-block;'}%></span>
+</footer>
