@@ -1,10 +1,12 @@
 <div class='homepage'>
-  <section class="spotlight"></section>
+  <section class="spotlight">
+  <h2>Media Spotlight: <%=link_to @spotlight.title%></h2>
+  </section>
   <section class="top-ten__container">
     <section class="top-ten__list-container">
       <h2 class="top-ten__header">Top Movies</h2>
         <ul class="list-group top-ten__list">
-          <%@movie_collection.each do |movie|%>
+          <%@top_ten_movie.each do |movie|%>
             <li class="list-group-item">
             <h4><%=link_to movie.title, work_path(movie.id)%>
             <small class="top-ten__creator"> by: <%=movie.creator%></small>
@@ -17,7 +19,7 @@
     <section class="top-ten__list-container">
       <h2 class="top-ten__header">Top Books</h2>
         <ul class="list-group top-ten__list">
-          <%@book_collection.each do |book|%>
+          <%@top_ten_book.each do |book|%>
             <li class="list-group-item">
             <h4><%=link_to book.title, work_path(book.id)%>
             <small class="top-ten__creator">by: <%=book.creator%></small>
@@ -30,7 +32,7 @@
     <section class="top-ten__list-container">
       <h2 class="top-ten__header">Top Albums</h2>
         <ul class="list-group top-ten__list">
-        <%@album_collection.each do |album|%>
+        <%@top_ten_album.each do |album|%>
           <li class="list-group-item">
           <h4><%=link_to album.title, work_path(album.id)%>
           <small class="top-ten__creator">by: <%=album.creator%></small>

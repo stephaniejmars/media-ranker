@@ -65,6 +65,19 @@ ul {
   color: white;
 }
 
+.btn-custom {
+  background-color: rgba(33, 163, 146, 0.849);
+  border: none;
+  color: white;
+}
+
+.btn-custom:hover {
+  background-color: rgba(25, 119, 107, 0.849);
+  border: none;
+  text-decoration: none;
+  color: white;
+}
+
 .top-ten__container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
