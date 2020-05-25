@@ -26,9 +26,10 @@
       </ul>
       <ul class="nav app-header__user-nav-container">
         <% if session[:user_id]%>
-          <li class="nav-item app-header__nav_item"><%=link_to "Logout", logout_path, method: :post, class: "btn btn-primary"%></li>
+          <li class="nav-item app-header__nav_item"><%=button_to "Logged in as #{User.find(session[:user_id]).user_name}", user_path(session[:user_id]), class: "btn btn-custom" %></li>
+          <li class="nav-item app-header__nav_item"><%=button_to "Logout", logout_path, method: :post, class: "btn btn-custom"%></li>
         <%else%>
-          </li class="nav-item app-header__nav_item"><%=link_to "Log In", login_path, class: "btn btn-primary"%></li>
+          </li class="nav-item app-header__nav_item"><%=button_to "Log In", login_path, method: :get, class: "btn btn-custom"%></li>
         <%end%>
       </ul>
     </nav>
