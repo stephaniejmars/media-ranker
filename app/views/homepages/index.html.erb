@@ -1,6 +1,10 @@
 <div class='homepage'>
   <section class="spotlight">
-  <h2>Media Spotlight: <%=link_to @spotlight.title%></h2>
+  <h2>
+  <span class="spotlight__header--prefix">Media Spotlight</span>
+  <%=link_to @spotlight.title%> by <%=@spotlight.creator%>
+  </h2>
+  <p><%=@spotlight.votes.count%> votes - <%=@spotlight.description%></p>
   </section>
   <section class="top-ten__container">
     <section class="top-ten__list-container">
